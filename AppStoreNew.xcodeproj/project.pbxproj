@@ -12,6 +12,10 @@
 		1FA51C3A223EA16400321FD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA51C38223EA16400321FD2 /* Main.storyboard */; };
 		1FA51C3C223EA16700321FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA51C3B223EA16700321FD2 /* Assets.xcassets */; };
 		1FA51C3F223EA16700321FD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA51C3D223EA16700321FD2 /* LaunchScreen.storyboard */; };
+		1FA51C48223EA18E00321FD2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C47223EA18E00321FD2 /* MainTabBarController.swift */; };
+		1FA51C4A223EA32E00321FD2 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C49223EA32E00321FD2 /* AppsSearchController.swift */; };
+		1FA51C4D223EA87B00321FD2 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C4C223EA87B00321FD2 /* SearchResultCell.swift */; };
+		1FA51C50223EAC6400321FD2 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C4F223EAC6400321FD2 /* Extensions+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1FA51C3B223EA16700321FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FA51C3E223EA16700321FD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FA51C40223EA16700321FD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA51C47223EA18E00321FD2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1FA51C49223EA32E00321FD2 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		1FA51C4C223EA87B00321FD2 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		1FA51C4F223EAC6400321FD2 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,9 @@
 		1FA51C33223EA16400321FD2 /* AppStoreNew */ = {
 			isa = PBXGroup;
 			children = (
+				1FA51C4E223EAC2900321FD2 /* Extensions */,
+				1FA51C4B223EA86800321FD2 /* Views */,
+				1FA51C46223EA17600321FD2 /* Controllers */,
 				1FA51C34223EA16400321FD2 /* AppDelegate.swift */,
 				1FA51C36223EA16400321FD2 /* ViewController.swift */,
 				1FA51C38223EA16400321FD2 /* Main.storyboard */,
@@ -62,6 +73,31 @@
 				1FA51C40223EA16700321FD2 /* Info.plist */,
 			);
 			path = AppStoreNew;
+			sourceTree = "<group>";
+		};
+		1FA51C46223EA17600321FD2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FA51C47223EA18E00321FD2 /* MainTabBarController.swift */,
+				1FA51C49223EA32E00321FD2 /* AppsSearchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1FA51C4B223EA86800321FD2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FA51C4C223EA87B00321FD2 /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1FA51C4E223EAC2900321FD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1FA51C4F223EAC6400321FD2 /* Extensions+UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +173,10 @@
 			files = (
 				1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */,
 				1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */,
+				1FA51C50223EAC6400321FD2 /* Extensions+UIView.swift in Sources */,
+				1FA51C4A223EA32E00321FD2 /* AppsSearchController.swift in Sources */,
+				1FA51C48223EA18E00321FD2 /* MainTabBarController.swift in Sources */,
+				1FA51C4D223EA87B00321FD2 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
