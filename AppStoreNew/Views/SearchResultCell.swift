@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchResultCell: UICollectionViewCell {
     
@@ -14,8 +15,8 @@ class SearchResultCell: UICollectionViewCell {
     
     private let appIconImageView: UIImageView = {
        let iv = UIImageView()
-        iv.backgroundColor = .red
         iv.layer.cornerRadius = 16.0
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -47,6 +48,30 @@ class SearchResultCell: UICollectionViewCell {
         return button
     }()
     
+    var screenShotsStackView: UIStackView!
+    
+    var result: Result? {
+        didSet {
+            categoryLabel.text = result?.primaryGenreName
+            nameLabel.text = result?.trackName
+            
+            if let rating = result?.averageUserRating {
+                ratingLabel.text = "Rating: \(rating)"
+            }
+            
+            appIconImageView.sd_setImage(with: URL(string: result?.artworkUrl100 ?? ""))
+            
+            if let screenShotUrls = result?.screenshotUrls {
+                screenShotUrls.forEach({ urlString in
+                    guard screenShotsStackView.subviews.count < 3 else { return }
+                    let iv = createScreenShot()
+                    iv.sd_setImage(with: URL(string: urlString))
+                    screenShotsStackView.addArrangedSubview(iv)
+                })
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -66,7 +91,7 @@ class SearchResultCell: UICollectionViewCell {
         infoStackView.alignment = .center
         infoStackView.spacing = 12.0
         
-        let screenShotsStackView = UIStackView(arrangedSubviews: [createScreenShot(), createScreenShot(), createScreenShot()])
+        screenShotsStackView = UIStackView()
         screenShotsStackView.spacing = 12.0
         screenShotsStackView.distribution = .fillEqually
         
@@ -87,7 +112,11 @@ class SearchResultCell: UICollectionViewCell {
     
     private func createScreenShot() -> UIImageView {
         let iv = UIImageView()
-        iv.backgroundColor = .blue
+        iv.layer.cornerRadius = 8.0
+        iv.clipsToBounds = true
+        iv.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        iv.layer.borderWidth = 0.5
+        iv.contentMode = .scaleAspectFill
         return iv
     }
 }
