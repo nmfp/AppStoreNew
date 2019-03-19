@@ -11,8 +11,15 @@ import UIKit
 
 class AppsPageController: UICollectionViewController {
     
-    var appGroups = [AppGroup]()
-    var socialApps = [SocialApp]()
+    private var appGroups = [AppGroup]()
+    private var socialApps = [SocialApp]()
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .whiteLarge)
+        ai.color = .black
+        ai.hidesWhenStopped = true
+        return ai
+    }()
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -25,8 +32,15 @@ class AppsPageController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLoadingAnimation()
         setupCollectionView()
         fetchAppGroups()
+    }
+    
+    private func setupLoadingAnimation() {
+        view.addSubview(activityIndicator)
+        activityIndicator.fillSuperview()
+        activityIndicator.startAnimating()
     }
     
     private func setupCollectionView() {
@@ -84,6 +98,7 @@ class AppsPageController: UICollectionViewController {
         }
         
         dispatchGroup.notify(queue: .main) {
+            self.activityIndicator.stopAnimating()
             self.collectionView.reloadData()
         }
     }
