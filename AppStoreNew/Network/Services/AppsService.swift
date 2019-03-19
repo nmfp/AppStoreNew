@@ -16,9 +16,18 @@ struct AppsService: APIService {
         getData(with: request, completion: completion)
     }
     
-    func fetchGroups(with router: NetworkResponse, completion: @escaping (APIResponse<AppGroup>) -> Void) {
+    func fetchTopFree(with router: NetworkResponse, completion: @escaping (APIResponse<AppGroup>) -> Void) {
         let request = router.request
         getData(with: request, completion: completion)
     }
 
+    func fetchTopGrossing(with router: NetworkResponse, completion: @escaping (APIResponse<AppGroup>) -> Void) {
+        let request = router.request
+        getData(with: request, completion: completion)
+    }
+    
+    func fetchGames(with router: NetworkResponse, completion: @escaping (APIResponse<AppGroup>) -> Void) {
+        let request = router.request
+        getData(with: request, completion: completion)
+    }
 }

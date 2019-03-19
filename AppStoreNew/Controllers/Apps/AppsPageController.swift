@@ -11,7 +11,7 @@ import UIKit
 
 class AppsPageController: UICollectionViewController {
     
-    var appGroup: AppGroup?
+    var appGroups = [AppGroup]()
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -35,29 +35,56 @@ class AppsPageController: UICollectionViewController {
     }
     
     private func fetchAppGroups() {
-        AppsService.shared.fetchGroups(with: AppsGroupRouter.group) { (response) in
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        AppsService.shared.fetchTopFree(with: AppsGroupRouter.topFree) { (response) in
+            dispatchGroup.leave()
             switch response {
             case .success(let appGroup):
-                self.appGroup = appGroup
+                self.appGroups.append(appGroup)
             case .error(let error):
                 print(error.localizedDescription)
             }
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        }
+        
+        dispatchGroup.enter()
+        AppsService.shared.fetchTopGrossing(with: AppsGroupRouter.topGrossing) { (response) in
+            dispatchGroup.leave()
+            switch response {
+            case .success(let appGroup):
+                self.appGroups.append(appGroup)
+            case .error(let error):
+                print(error.localizedDescription)
             }
+        }
+        
+        dispatchGroup.enter()
+        AppsService.shared.fetchGames(with: AppsGroupRouter.games) { (response) in
+            dispatchGroup.leave()
+            switch response {
+            case .success(let appGroup):
+                self.appGroups.append(appGroup)
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            self.collectionView.reloadData()
         }
     }
 }
 
 extension AppsPageController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return appGroups.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell.key, for: indexPath) as! AppsGroupCell
-        cell.appGroup = appGroup
+        cell.appGroup = appGroups[indexPath.item]
         return cell
     }
     

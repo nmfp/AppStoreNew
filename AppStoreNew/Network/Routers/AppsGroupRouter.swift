@@ -8,34 +8,31 @@
 
 import Foundation
 
-enum AppsGroupRouter: NetworkResponse {
-    case group
+enum AppsGroupRouter: String, NetworkResponse {
+    case topFree = "top-free"
+    case topGrossing = "top-grossing"
+    case games = "new-games-we-love"
     
     var baseUrl: String {
-        switch self {
-        case .group:
-            return "https://rss.itunes.apple.com"
-        }
+        return "https://rss.itunes.apple.com"
     }
     
     var path: String {
         switch self {
-        case .group:
-            return "/api/v1/us/ios-apps/top-free/all/50/explicit.json"
+        case .topFree:
+            return "/api/v1/us/ios-apps/\(AppsGroupRouter.topFree.rawValue)/all/50/explicit.json"
+        case .topGrossing:
+            return "/api/v1/us/ios-apps/\(AppsGroupRouter.topGrossing.rawValue)/all/50/explicit.json"
+        case .games:
+            return "/api/v1/us/ios-apps/\(AppsGroupRouter.games.rawValue)/all/50/explicit.json"
         }
     }
     
     var method: String {
-        switch self {
-        case .group:
-            return "GET"
-        }
+        return "GET"
     }
     
     var parameters: [URLQueryItem]? {
-        switch self {
-        case .group:
-            return nil
-        }
+        return nil
     }
 }
