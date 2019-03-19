@@ -10,6 +10,12 @@ import UIKit
 
 class AppsHeaderHorizontalController: UICollectionViewController {
     
+    var socialApps: [SocialApp]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -23,26 +29,24 @@ class AppsHeaderHorizontalController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        fetchAppGroups()
     }
     
     private func setupCollectionView() {
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .white
         collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: AppsHeaderCell.key)
-    }
-    
-    private func fetchAppGroups() {
-        
     }
 }
 
 extension AppsHeaderHorizontalController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return socialApps?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsHeaderCell.key, for: indexPath) as! AppsHeaderCell
+        if let socialApps = socialApps {
+            cell.socialApp = socialApps[indexPath.item]
+        }
         return cell
     }
     

@@ -17,7 +17,7 @@ class AppsHeaderCell: UICollectionViewCell {
         let iv = UIImageView()
         iv.layer.cornerRadius = 8.0
         iv.clipsToBounds = true
-        iv.backgroundColor = .red
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     
@@ -37,6 +37,14 @@ class AppsHeaderCell: UICollectionViewCell {
         return label
     }()
     
+    var socialApp: SocialApp? {
+        didSet {
+            titleLabel.text = socialApp?.tagline
+            companyLabel.text = socialApp?.name
+            appImageView.sd_setImage(with: URL(string: socialApp?.imageUrl ?? ""))
+        }
+    }
+    
     //MARK:- Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,14 +57,11 @@ class AppsHeaderCell: UICollectionViewCell {
     
     //MARK:- Setup UI
     private func setupViews() {
-        backgroundColor = .green
-        
         let stackView = UIStackView(arrangedSubviews: [companyLabel, titleLabel, appImageView])
         stackView.spacing = 12.0
         stackView.axis = .vertical
         
         addSubview(stackView)
         stackView.fillSuperview()
-        
     }
 }

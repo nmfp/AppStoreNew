@@ -30,4 +30,9 @@ struct AppsService: APIService {
         let request = router.request
         getData(with: request, completion: completion)
     }
+    
+    func fetchSocial(with router: NetworkResponse, completion: @escaping (APIResponse<[SocialApp]>) -> Void) {
+        let request = router.request
+        getData(with: request, completion: completion)
+    }
 }

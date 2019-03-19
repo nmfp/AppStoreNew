@@ -12,6 +12,7 @@ import UIKit
 class AppsPageController: UICollectionViewController {
     
     var appGroups = [AppGroup]()
+    var socialApps = [SocialApp]()
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -71,6 +72,17 @@ class AppsPageController: UICollectionViewController {
             }
         }
         
+        dispatchGroup.enter()
+        AppsService.shared.fetchSocial(with: SocialRouter.social) { (response) in
+            dispatchGroup.leave()
+            switch response {
+            case .success(let socialApps):
+                self.socialApps = socialApps
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         dispatchGroup.notify(queue: .main) {
             self.collectionView.reloadData()
         }
@@ -90,6 +102,7 @@ extension AppsPageController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppsPageHeader.key, for: indexPath) as! AppsPageHeader
+        header.socialApps = socialApps
         return header
     }
 }
