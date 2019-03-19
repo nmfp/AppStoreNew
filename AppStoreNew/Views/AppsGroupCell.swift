@@ -12,6 +12,13 @@ class AppsGroupCell: UICollectionViewCell {
     
     static let key = String(describing: AppsGroupCell.self)
     
+    var appGroup: AppGroup? {
+        didSet {
+            titleLabel.text = appGroup?.feed.title
+            horizontalListController.appGroup = appGroup
+        }
+    }
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "App Section"

@@ -15,6 +15,12 @@ class AppsHorizontalController: UICollectionViewController {
     private let lineSpacing: CGFloat = 10.0
     private let topBottomMargin: CGFloat = 12.0
     
+    var appGroup: AppGroup? {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     //MARK:- Initializers
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -41,11 +47,14 @@ class AppsHorizontalController: UICollectionViewController {
 //MARK:- Datasource Methods
 extension AppsHorizontalController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return appGroup?.feed.results.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppRowCell.key, for: indexPath) as! AppRowCell
+        if let feedResults = appGroup?.feed.results {
+            cell.feedResult = feedResults[indexPath.item]
+        }
         return cell
     }
 }

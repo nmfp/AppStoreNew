@@ -45,6 +45,14 @@ class AppRowCell: UICollectionViewCell {
         return button
     }()
     
+    var feedResult: FeedResult? {
+        didSet {
+            nameLabel.text = feedResult?.name
+            companyLabel.text = feedResult?.artistName
+            appIconImageView.sd_setImage(with: URL(string: feedResult?.artworkUrl100 ?? ""))
+        }
+    }
+    
     //MARK:- Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)

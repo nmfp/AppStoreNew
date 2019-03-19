@@ -15,4 +15,10 @@ struct AppsService: APIService {
         let request = router.request
         getData(with: request, completion: completion)
     }
+    
+    func fetchGroups(with router: NetworkResponse, completion: @escaping (APIResponse<AppGroup>) -> Void) {
+        let request = router.request
+        getData(with: request, completion: completion)
+    }
+
 }

@@ -24,6 +24,11 @@
 		1FA51C62223FD05600321FD2 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C61223FD05600321FD2 /* AppsGroupCell.swift */; };
 		1FA51C64223FD24300321FD2 /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C63223FD24300321FD2 /* AppsHorizontalController.swift */; };
 		1FA51C66224067AF00321FD2 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C65224067AF00321FD2 /* AppRowCell.swift */; };
+		1FA51C6822406E7C00321FD2 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C6722406E7C00321FD2 /* AppsPageHeader.swift */; };
+		1FA51C6A22406F6E00321FD2 /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C6922406F6E00321FD2 /* AppsHeaderHorizontalController.swift */; };
+		1FA51C6C2240711A00321FD2 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C6B2240711A00321FD2 /* AppsHeaderCell.swift */; };
+		1FA51C6E2240762D00321FD2 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C6D2240762D00321FD2 /* AppGroup.swift */; };
+		1FA51C70224076D200321FD2 /* AppsGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C6F224076D200321FD2 /* AppsGroupRouter.swift */; };
 		823DDCA55C04781AE1CD5C6D /* Pods_AppStoreNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3950E83AD1A80E5F7552BFD /* Pods_AppStoreNew.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +53,11 @@
 		1FA51C61223FD05600321FD2 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		1FA51C63223FD24300321FD2 /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
 		1FA51C65224067AF00321FD2 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
+		1FA51C6722406E7C00321FD2 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
+		1FA51C6922406F6E00321FD2 /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
+		1FA51C6B2240711A00321FD2 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
+		1FA51C6D2240762D00321FD2 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		1FA51C6F224076D200321FD2 /* AppsGroupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupRouter.swift; sourceTree = "<group>"; };
 		4A3D04EDBA5B4AF2676D6C0E /* Pods-AppStoreNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreNew.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreNew/Pods-AppStoreNew.debug.xcconfig"; sourceTree = "<group>"; };
 		A3950E83AD1A80E5F7552BFD /* Pods_AppStoreNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +126,8 @@
 				1FA51C4C223EA87B00321FD2 /* SearchResultCell.swift */,
 				1FA51C61223FD05600321FD2 /* AppsGroupCell.swift */,
 				1FA51C65224067AF00321FD2 /* AppRowCell.swift */,
+				1FA51C6722406E7C00321FD2 /* AppsPageHeader.swift */,
+				1FA51C6B2240711A00321FD2 /* AppsHeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA51C52223EC0C100321FD2 /* SearchResult.swift */,
+				1FA51C6D2240762D00321FD2 /* AppGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA51C5A223FAFF700321FD2 /* AppsRouter.swift */,
+				1FA51C6F224076D200321FD2 /* AppsGroupRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -167,6 +181,7 @@
 			children = (
 				1FA51C5F223FCF2400321FD2 /* AppsPageController.swift */,
 				1FA51C63223FD24300321FD2 /* AppsHorizontalController.swift */,
+				1FA51C6922406F6E00321FD2 /* AppsHeaderHorizontalController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -311,13 +326,18 @@
 				1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */,
 				1FA51C60223FCF2400321FD2 /* AppsPageController.swift in Sources */,
 				1FA51C57223EC69300321FD2 /* APIService.swift in Sources */,
+				1FA51C6822406E7C00321FD2 /* AppsPageHeader.swift in Sources */,
 				1FA51C53223EC0C100321FD2 /* SearchResult.swift in Sources */,
 				1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */,
 				1FA51C50223EAC6400321FD2 /* Extensions+UIView.swift in Sources */,
 				1FA51C66224067AF00321FD2 /* AppRowCell.swift in Sources */,
 				1FA51C5D223FB61600321FD2 /* AppsService.swift in Sources */,
 				1FA51C62223FD05600321FD2 /* AppsGroupCell.swift in Sources */,
+				1FA51C6C2240711A00321FD2 /* AppsHeaderCell.swift in Sources */,
+				1FA51C6A22406F6E00321FD2 /* AppsHeaderHorizontalController.swift in Sources */,
 				1FA51C4A223EA32E00321FD2 /* AppsSearchController.swift in Sources */,
+				1FA51C6E2240762D00321FD2 /* AppGroup.swift in Sources */,
+				1FA51C70224076D200321FD2 /* AppsGroupRouter.swift in Sources */,
 				1FA51C48223EA18E00321FD2 /* MainTabBarController.swift in Sources */,
 				1FA51C4D223EA87B00321FD2 /* SearchResultCell.swift in Sources */,
 				1FA51C64223FD24300321FD2 /* AppsHorizontalController.swift in Sources */,
