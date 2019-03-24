@@ -17,7 +17,7 @@ class AppsHeaderHorizontalController: UICollectionViewController {
     }
     
     init() {
-        let layout = UICollectionViewFlowLayout()
+        let layout = CollectionSpinningLayout()
         layout.scrollDirection = .horizontal
         super.init(collectionViewLayout: layout)
     }
@@ -32,7 +32,9 @@ class AppsHeaderHorizontalController: UICollectionViewController {
     }
     
     private func setupCollectionView() {
+        collectionView.decelerationRate = .fast
         collectionView.backgroundColor = .white
+        collectionView.contentInset = .init(top: 32.0, left: 16.0, bottom: 32.0, right: 16.0)
         collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: AppsHeaderCell.key)
     }
 }
@@ -50,9 +52,9 @@ extension AppsHeaderHorizontalController {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return .init(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+//    }
 }
 
 extension AppsHeaderHorizontalController: UICollectionViewDelegateFlowLayout {

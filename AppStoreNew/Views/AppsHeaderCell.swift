@@ -24,7 +24,7 @@ class AppsHeaderCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "App name"
-        label.font = .systemFont(ofSize: 24.0)
+        label.font = .systemFont(ofSize: 20.0)
         label.numberOfLines = 2
         return label
     }()
@@ -58,10 +58,10 @@ class AppsHeaderCell: UICollectionViewCell {
     //MARK:- Setup UI
     private func setupViews() {
         let stackView = UIStackView(arrangedSubviews: [companyLabel, titleLabel, appImageView])
-        stackView.spacing = 12.0
+        stackView.spacing = 8.0
         stackView.axis = .vertical
         
         addSubview(stackView)
-        stackView.fillSuperview()
+        stackView.fillSuperview(padding: .init(top: 12.0, left: 0.0, bottom: 12.0, right: 0.0))
     }
 }

@@ -22,7 +22,7 @@ class AppsGroupCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "App Section"
-        label.font = .boldSystemFont(ofSize: 30.0)
+        label.font = .boldSystemFont(ofSize: 26.0)
         return label
     }()
     

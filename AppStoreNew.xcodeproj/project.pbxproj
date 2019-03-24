@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */; };
 		1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C34223EA16400321FD2 /* AppDelegate.swift */; };
 		1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C36223EA16400321FD2 /* ViewController.swift */; };
 		1FA51C3A223EA16400321FD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA51C38223EA16400321FD2 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		1606837CEB29BAB953EA7954 /* Pods-AppStoreNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreNew.release.xcconfig"; path = "Target Support Files/Pods-AppStoreNew/Pods-AppStoreNew.release.xcconfig"; sourceTree = "<group>"; };
+		1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSpinningLayout.swift; sourceTree = "<group>"; };
 		1FA51C31223EA16400321FD2 /* AppStoreNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA51C34223EA16400321FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FA51C36223EA16400321FD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				1FA51C65224067AF00321FD2 /* AppRowCell.swift */,
 				1FA51C6722406E7C00321FD2 /* AppsPageHeader.swift */,
 				1FA51C6B2240711A00321FD2 /* AppsHeaderCell.swift */,
+				1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				1FA51C6C2240711A00321FD2 /* AppsHeaderCell.swift in Sources */,
 				1FA51C6A22406F6E00321FD2 /* AppsHeaderHorizontalController.swift in Sources */,
 				1FA51C4A223EA32E00321FD2 /* AppsSearchController.swift in Sources */,
+				1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */,
 				1FA51C6E2240762D00321FD2 /* AppGroup.swift in Sources */,
 				1FA51C70224076D200321FD2 /* AppsGroupRouter.swift in Sources */,
 				1FA51C48223EA18E00321FD2 /* MainTabBarController.swift in Sources */,

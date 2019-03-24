@@ -23,7 +23,7 @@ class AppsHorizontalController: UICollectionViewController {
     
     //MARK:- Initializers
     init() {
-        let layout = UICollectionViewFlowLayout()
+        let layout = CollectionSpinningLayout()
         layout.scrollDirection = .horizontal
         super.init(collectionViewLayout: layout)
     }
@@ -39,8 +39,14 @@ class AppsHorizontalController: UICollectionViewController {
     }
     
     private func setupCollectionView() {
+        collectionView.decelerationRate = .fast
         collectionView.backgroundColor = .white
+        collectionView.contentInset = .init(top: 12.0, left: 16.0, bottom: 12.0, right: 16.0)
         collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: AppRowCell.key)
+        
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumLineSpacing = 10
+        }
     }
 }
 
@@ -66,11 +72,11 @@ extension AppsHorizontalController: UICollectionViewDelegateFlowLayout {
         return .init(width: collectionView.frame.width - 48.0, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return lineSpacing
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 20
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 12.0, left: 16.0, bottom: 12.0, right: 16.0)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return .init(top: 12.0, left: 16.0, bottom: 12.0, right: 16.0)
+//    }
 }

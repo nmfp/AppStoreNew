@@ -128,6 +128,6 @@ extension AppsPageController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: collectionView.frame.width, height: 300.0)
+        return .init(width: collectionView.frame.width, height: 324.0)
     }
 }

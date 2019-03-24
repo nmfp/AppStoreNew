@@ -17,21 +17,22 @@ class AppRowCell: UICollectionViewCell {
         let iv = UIImageView()
         iv.layer.cornerRadius = 16.0
         iv.clipsToBounds = true
-        iv.backgroundColor = .red
+        iv.layer.borderWidth = 0.5
+        iv.layer.borderColor = UIColor(white: 0.85, alpha: 1.0).cgColor
         return iv
     }()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "App name"
-        label.font = .systemFont(ofSize: 20.0)
+        label.font = .systemFont(ofSize: 16.0)
         return label
     }()
     
     private let companyLabel: UILabel = {
         let label = UILabel()
         label.text = "Photo & Video"
-        label.font = .systemFont(ofSize: 13.0)
+        label.font = .systemFont(ofSize: 12.0)
         return label
     }()
     
@@ -79,7 +80,7 @@ class AppRowCell: UICollectionViewCell {
         
         let overallStackView = UIStackView(arrangedSubviews: [appIconImageView, labelsStack, getButton])
         overallStackView.alignment = .center
-        overallStackView.spacing = 16.0
+        overallStackView.spacing = 12.0
         addSubview(overallStackView)
         overallStackView.fillSuperview()
     }
