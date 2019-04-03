@@ -35,4 +35,9 @@ struct AppsService: APIService {
         let request = router.request
         getData(with: request, completion: completion)
     }
+    
+    func fetchApp(with router: NetworkResponse, completion: @escaping (APIResponse<SearchResult>) -> Void) {
+        let request = router.request
+        getData(with: request, completion: completion)
+    }
 }

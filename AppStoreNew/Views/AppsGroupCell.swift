@@ -26,7 +26,7 @@ class AppsGroupCell: UICollectionViewCell {
         return label
     }()
     
-    private let horizontalListController = AppsHorizontalController()
+    let horizontalListController = AppsHorizontalController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F10C443224F7D36001E5B74 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C442224F7D36001E5B74 /* AppDetailController.swift */; };
+		1F10C446224F8799001E5B74 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C445224F8799001E5B74 /* AppDetailCell.swift */; };
+		1F10C4482254D961001E5B74 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C4472254D961001E5B74 /* PreviewCell.swift */; };
+		1F10C44B2254E819001E5B74 /* PreviewScreenshotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C44A2254E819001E5B74 /* PreviewScreenshotsController.swift */; };
+		1F10C44D2254E885001E5B74 /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C44C2254E885001E5B74 /* ScreenshotCell.swift */; };
+		1F10C451225500A8001E5B74 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C450225500A8001E5B74 /* ReviewsController.swift */; };
+		1F10C4532255016E001E5B74 /* ReviewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C4522255016E001E5B74 /* ReviewRowCell.swift */; };
+		1F10C45522550188001E5B74 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C45422550188001E5B74 /* ReviewCell.swift */; };
 		1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */; };
 		1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C34223EA16400321FD2 /* AppDelegate.swift */; };
 		1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C36223EA16400321FD2 /* ViewController.swift */; };
@@ -37,6 +45,14 @@
 
 /* Begin PBXFileReference section */
 		1606837CEB29BAB953EA7954 /* Pods-AppStoreNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreNew.release.xcconfig"; path = "Target Support Files/Pods-AppStoreNew/Pods-AppStoreNew.release.xcconfig"; sourceTree = "<group>"; };
+		1F10C442224F7D36001E5B74 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
+		1F10C445224F8799001E5B74 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
+		1F10C4472254D961001E5B74 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		1F10C44A2254E819001E5B74 /* PreviewScreenshotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotsController.swift; sourceTree = "<group>"; };
+		1F10C44C2254E885001E5B74 /* ScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
+		1F10C450225500A8001E5B74 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
+		1F10C4522255016E001E5B74 /* ReviewRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRowCell.swift; sourceTree = "<group>"; };
+		1F10C45422550188001E5B74 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSpinningLayout.swift; sourceTree = "<group>"; };
 		1FA51C31223EA16400321FD2 /* AppStoreNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA51C34223EA16400321FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +96,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F10C444224F878D001E5B74 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1F10C4522255016E001E5B74 /* ReviewRowCell.swift */,
+				1F10C445224F8799001E5B74 /* AppDetailCell.swift */,
+				1F10C4472254D961001E5B74 /* PreviewCell.swift */,
+				1F10C44C2254E885001E5B74 /* ScreenshotCell.swift */,
+				1F10C45422550188001E5B74 /* ReviewCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1F10C4492254E7F7001E5B74 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1F10C442224F7D36001E5B74 /* AppDetailController.swift */,
+				1F10C44A2254E819001E5B74 /* PreviewScreenshotsController.swift */,
+				1F10C450225500A8001E5B74 /* ReviewsController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		1FA51C28223EA16400321FD2 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +167,7 @@
 		1FA51C4B223EA86800321FD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F10C444224F878D001E5B74 /* Details */,
 				1FA51C4C223EA87B00321FD2 /* SearchResultCell.swift */,
 				1FA51C61223FD05600321FD2 /* AppsGroupCell.swift */,
 				1FA51C65224067AF00321FD2 /* AppRowCell.swift */,
@@ -188,6 +227,7 @@
 		1FA51C5E223FCF0E00321FD2 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				1F10C4492254E7F7001E5B74 /* Details */,
 				1FA51C5F223FCF2400321FD2 /* AppsPageController.swift */,
 				1FA51C63223FD24300321FD2 /* AppsHorizontalController.swift */,
 				1FA51C6922406F6E00321FD2 /* AppsHeaderHorizontalController.swift */,
@@ -333,21 +373,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */,
+				1F10C45522550188001E5B74 /* ReviewCell.swift in Sources */,
 				1FA51C60223FCF2400321FD2 /* AppsPageController.swift in Sources */,
 				1FA51C722240883300321FD2 /* SocialApp.swift in Sources */,
+				1F10C443224F7D36001E5B74 /* AppDetailController.swift in Sources */,
 				1FA51C57223EC69300321FD2 /* APIService.swift in Sources */,
+				1F10C4532255016E001E5B74 /* ReviewRowCell.swift in Sources */,
 				1FA51C6822406E7C00321FD2 /* AppsPageHeader.swift in Sources */,
 				1FA51C53223EC0C100321FD2 /* SearchResult.swift in Sources */,
 				1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */,
 				1FA51C50223EAC6400321FD2 /* Extensions+UIView.swift in Sources */,
 				1FA51C66224067AF00321FD2 /* AppRowCell.swift in Sources */,
+				1F10C446224F8799001E5B74 /* AppDetailCell.swift in Sources */,
 				1FA51C742240886700321FD2 /* SocialRouter.swift in Sources */,
+				1F10C44B2254E819001E5B74 /* PreviewScreenshotsController.swift in Sources */,
 				1FA51C5D223FB61600321FD2 /* AppsService.swift in Sources */,
 				1FA51C62223FD05600321FD2 /* AppsGroupCell.swift in Sources */,
 				1FA51C6C2240711A00321FD2 /* AppsHeaderCell.swift in Sources */,
 				1FA51C6A22406F6E00321FD2 /* AppsHeaderHorizontalController.swift in Sources */,
+				1F10C451225500A8001E5B74 /* ReviewsController.swift in Sources */,
+				1F10C4482254D961001E5B74 /* PreviewCell.swift in Sources */,
 				1FA51C4A223EA32E00321FD2 /* AppsSearchController.swift in Sources */,
 				1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */,
+				1F10C44D2254E885001E5B74 /* ScreenshotCell.swift in Sources */,
 				1FA51C6E2240762D00321FD2 /* AppGroup.swift in Sources */,
 				1FA51C70224076D200321FD2 /* AppsGroupRouter.swift in Sources */,
 				1FA51C48223EA18E00321FD2 /* MainTabBarController.swift in Sources */,
@@ -509,7 +557,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nMfpCoding.AppStoreNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -528,7 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nMfpCoding.AppStoreNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

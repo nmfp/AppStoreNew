@@ -15,6 +15,7 @@ class AppsHorizontalController: UICollectionViewController {
     private let lineSpacing: CGFloat = 10.0
     private let topBottomMargin: CGFloat = 12.0
     
+    var showAppDetail: ((FeedResult) -> Void)?
     var appGroup: AppGroup? {
         didSet {
             self.collectionView.reloadData()
@@ -62,6 +63,12 @@ extension AppsHorizontalController {
             cell.feedResult = feedResults[indexPath.item]
         }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = appGroup?.feed.results[indexPath.item] {
+            showAppDetail?(app)
+        }
     }
 }
 

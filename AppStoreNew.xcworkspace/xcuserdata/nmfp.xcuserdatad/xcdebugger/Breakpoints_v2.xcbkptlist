@@ -17,22 +17,38 @@
             endingLineNumber = "62"
             landmarkName = "fetchITunesApps(with:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppStoreNew/Views/CollectionSpinningLayout.swift"
-            timestampString = "575151915.749719"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "targetContentOffset(forProposedContentOffset:withScrollingVelocity:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (AppStoreNew.APIResponse&lt;AppStoreNew.SearchResult&gt;) -&gt; () in AppStoreNew.AppsSearchController.(fetchITunesApps in _5424D5EFEBCA919C473B8E378CBF0671)(with: Swift.String) -&gt; ()"
+                  moduleName = "AppStoreNew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nmfp/nMfp%20Coding/Swift%20Projects/AppStoreNew/AppStoreNew/Controllers/AppsSearchController.swift"
+                  timestampString = "575997435.55474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "205">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (AppStoreNew.APIResponse&lt;AppStoreNew.SearchResult&gt;) -&gt; () in AppStoreNew.AppsSearchController.(fetchITunesApps in _5424D5EFEBCA919C473B8E378CBF0671)(with: Swift.String) -&gt; ()"
+                  moduleName = "AppStoreNew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nmfp/nMfp%20Coding/Swift%20Projects/AppStoreNew/AppStoreNew/Controllers/AppsSearchController.swift"
+                  timestampString = "575997435.55717"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "213">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

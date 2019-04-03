@@ -13,6 +13,7 @@ class AppsPageController: UICollectionViewController {
     
     private var appGroups = [AppGroup]()
     private var socialApps = [SocialApp]()
+    private var showAppDetailController: ((FeedResult) -> Void)?
     
     private let activityIndicator: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(style: .whiteLarge)
@@ -35,6 +36,12 @@ class AppsPageController: UICollectionViewController {
         setupLoadingAnimation()
         setupCollectionView()
         fetchAppGroups()
+        
+        showAppDetailController = { [weak self] feedResult in
+            let vc = AppDetailController(width: feedResult.id)
+            vc.navigationItem.title = feedResult.name
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func setupLoadingAnimation() {
@@ -112,6 +119,7 @@ extension AppsPageController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell.key, for: indexPath) as! AppsGroupCell
         cell.appGroup = appGroups[indexPath.item]
+        cell.horizontalListController.showAppDetail = showAppDetailController
         return cell
     }
     
