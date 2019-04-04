@@ -13,15 +13,12 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTabBarControllers()
-        
-        selectedIndex = 1
     }
     
     private func setupTabBarControllers() {
         viewControllers = [
-            setupTabBarNavigationController(with: "Today", iconName: "today_icon", iconTitle: "Today"),
+            setupTabBarNavigationController(with: "Today", iconName: "today_icon", iconTitle: "Today", viewController: TodayController(collectionViewLayout: UICollectionViewFlowLayout())),
             setupTabBarNavigationController(with: "Apps", iconName: "apps", iconTitle: "Apps", viewController: AppsPageController()),
             setupTabBarNavigationController(with: "Search", iconName: "search", iconTitle: "Search", viewController: AppsSearchController())
         ]
