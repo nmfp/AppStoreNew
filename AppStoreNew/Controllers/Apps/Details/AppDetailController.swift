@@ -10,13 +10,13 @@ import UIKit
 
 class AppDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private var appId: String?
+    private let appId: String
     private var appResult: Result?
     private var reviews: Review?
     
     init(width id: String) {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
         self.appId = id
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +33,7 @@ class AppDetailController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     private func fetchAppData() {
-        AppsService.shared.fetchApp(with: AppsRouter.app(appId ?? "")) { (response) in
+        AppsService.shared.fetchApp(with: AppsRouter.app(appId)) { (response) in
             switch response {
             case .success(let result):
                 self.appResult = result.results.first
@@ -46,7 +46,7 @@ class AppDetailController: UICollectionViewController, UICollectionViewDelegateF
             }
         }
         
-        AppsService.shared.fetchAppReviews(with: AppsRouter.reviews(appId ?? "")) { (response) in
+        AppsService.shared.fetchAppReviews(with: AppsRouter.reviews(appId)) { (response) in
             switch response {
             case .success(let reviews):
                 self.reviews = reviews
