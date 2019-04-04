@@ -14,12 +14,13 @@ struct SearchResult: Codable {
 }
 
 struct Result: Codable {
+    let trackId: Int
     let primaryGenreName: String
     let trackName: String
     let averageUserRating: Float?
     let screenshotUrls: [String]
     let artworkUrl100: String //app icon
-    let formattedPrice: String
+    var formattedPrice: String?
     let description: String
-    let releaseNotes: String
+    var releaseNotes: String?
 }
