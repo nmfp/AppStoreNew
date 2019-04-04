@@ -10,6 +10,12 @@ import UIKit
 
 class ReviewsController: UICollectionViewController {
     
+    var reviews: [Entry]? {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     init() {
         let layout = CollectionSpinningLayout()
         layout.scrollDirection = .horizontal
@@ -26,17 +32,18 @@ class ReviewsController: UICollectionViewController {
     }
     
     private func setupCollectionView() {
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .white
         collectionView.contentInset = .init(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
         collectionView.register(ReviewCell.self, forCellWithReuseIdentifier: ReviewCell.key)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return reviews?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewCell.key, for: indexPath) as! ReviewCell
+        cell.review = reviews?[indexPath.item]
         return cell
     }
 }

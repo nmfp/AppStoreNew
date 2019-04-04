@@ -40,4 +40,9 @@ struct AppsService: APIService {
         let request = router.request
         getData(with: request, completion: completion)
     }
+    
+    func fetchAppReviews(with router: NetworkResponse, completion: @escaping (APIResponse<Review>) -> Void) {
+        let request = router.request
+        getData(with: request, completion: completion)
+    }
 }

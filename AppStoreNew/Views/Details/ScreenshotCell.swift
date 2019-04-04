@@ -16,6 +16,7 @@ class ScreenshotCell: UICollectionViewCell {
        let iv = UIImageView()
         iv.layer.cornerRadius = 12.0
         iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     

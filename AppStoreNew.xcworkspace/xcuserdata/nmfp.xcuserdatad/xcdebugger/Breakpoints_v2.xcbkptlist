@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppStoreNew/Controllers/AppsSearchController.swift"
-            timestampString = "574656302.286265"
+            timestampString = "576063169.7193609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -19,14 +19,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; () in closure #1 (AppStoreNew.APIResponse&lt;AppStoreNew.SearchResult&gt;) -&gt; () in AppStoreNew.AppsSearchController.(fetchITunesApps in _5424D5EFEBCA919C473B8E378CBF0671)(with: Swift.String) -&gt; ()"
                   moduleName = "AppStoreNew"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nmfp/nMfp%20Coding/Swift%20Projects/AppStoreNew/AppStoreNew/Controllers/AppsSearchController.swift"
-                  timestampString = "575997435.55474"
+                  timestampString = "576062820.026281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -34,19 +34,67 @@
                   offsetFromSymbolStart = "205">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; () in closure #1 (AppStoreNew.APIResponse&lt;AppStoreNew.SearchResult&gt;) -&gt; () in AppStoreNew.AppsSearchController.(fetchITunesApps in _5424D5EFEBCA919C473B8E378CBF0671)(with: Swift.String) -&gt; ()"
                   moduleName = "AppStoreNew"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nmfp/nMfp%20Coding/Swift%20Projects/AppStoreNew/AppStoreNew/Controllers/AppsSearchController.swift"
-                  timestampString = "575997435.55717"
+                  timestampString = "576062820.028924"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "213">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppStoreNew/Controllers/Apps/Details/AppDetailController.swift"
+            timestampString = "576063169.720269"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetchAppData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AppStoreNew.AppDetailController.(fetchAppData in _915EFF5B53E9E1728BD1769E8569DCA7)() -&gt; ()"
+                  moduleName = "AppStoreNew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nmfp/nMfp%20Coding/Swift%20Projects/AppStoreNew/AppStoreNew/Controllers/Apps/Details/AppDetailController.swift"
+                  timestampString = "576062820.040725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "355">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (AppStoreNew.APIResponse&lt;AppStoreNew.Review&gt;) -&gt; () in AppStoreNew.AppDetailController.(fetchAppData in _915EFF5B53E9E1728BD1769E8569DCA7)() -&gt; ()"
+                  moduleName = "AppStoreNew"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nmfp/nMfp%20Coding/Swift%20Projects/AppStoreNew/AppStoreNew/Controllers/Apps/Details/AppDetailController.swift"
+                  timestampString = "576062820.043433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "265">
                </Location>
             </Locations>
          </BreakpointContent>

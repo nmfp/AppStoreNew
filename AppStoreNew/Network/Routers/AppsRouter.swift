@@ -31,6 +31,7 @@ extension NetworkResponse {
 enum AppsRouter: NetworkResponse {
     case appSearch(String)
     case app(String)
+    case reviews(String)
     
     var baseUrl: String {
         return "https://itunes.apple.com"
@@ -42,6 +43,8 @@ enum AppsRouter: NetworkResponse {
             return "GET"
         case .app:
             return "GET"
+        case .reviews:
+            return "GET"
         }
     }
     
@@ -51,6 +54,8 @@ enum AppsRouter: NetworkResponse {
             return "/search"
         case .app:
             return "/lookup"
+        case .reviews(let appId):
+            return "/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json"
         }
     }
     
@@ -64,6 +69,11 @@ enum AppsRouter: NetworkResponse {
         case .app(let appId):
             return [
                 URLQueryItem(name: "id", value: appId)
+            ]
+        case .reviews:
+            return [
+                URLQueryItem(name: "l", value: "en"),
+                URLQueryItem(name: "cc", value: "us")
             ]
         }
     }

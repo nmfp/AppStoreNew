@@ -15,6 +15,7 @@
 		1F10C451225500A8001E5B74 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C450225500A8001E5B74 /* ReviewsController.swift */; };
 		1F10C4532255016E001E5B74 /* ReviewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C4522255016E001E5B74 /* ReviewRowCell.swift */; };
 		1F10C45522550188001E5B74 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C45422550188001E5B74 /* ReviewCell.swift */; };
+		1F10C45722553DCA001E5B74 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C45622553DCA001E5B74 /* Review.swift */; };
 		1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */; };
 		1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C34223EA16400321FD2 /* AppDelegate.swift */; };
 		1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C36223EA16400321FD2 /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		1F10C450225500A8001E5B74 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		1F10C4522255016E001E5B74 /* ReviewRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRowCell.swift; sourceTree = "<group>"; };
 		1F10C45422550188001E5B74 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		1F10C45622553DCA001E5B74 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSpinningLayout.swift; sourceTree = "<group>"; };
 		1FA51C31223EA16400321FD2 /* AppStoreNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA51C34223EA16400321FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				1FA51C52223EC0C100321FD2 /* SearchResult.swift */,
 				1FA51C6D2240762D00321FD2 /* AppGroup.swift */,
 				1FA51C712240883300321FD2 /* SocialApp.swift */,
+				1F10C45622553DCA001E5B74 /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */,
 				1F10C44D2254E885001E5B74 /* ScreenshotCell.swift in Sources */,
 				1FA51C6E2240762D00321FD2 /* AppGroup.swift in Sources */,
+				1F10C45722553DCA001E5B74 /* Review.swift in Sources */,
 				1FA51C70224076D200321FD2 /* AppsGroupRouter.swift in Sources */,
 				1FA51C48223EA18E00321FD2 /* MainTabBarController.swift in Sources */,
 				1FA51C4D223EA87B00321FD2 /* SearchResultCell.swift in Sources */,
