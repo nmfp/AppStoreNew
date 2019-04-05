@@ -17,20 +17,71 @@ class TodayController: UICollectionViewController {
     private var heightConstraint: NSLayoutConstraint?
     private var widthConstraint: NSLayoutConstraint?
     
-    let items: [TodayItem] = [
-        .init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single),
-        .init(category: "THE DAILY LIST", title: "Test-Drive these CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
-        .init(category: "HOLIDAYS", title: "Travel on Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9893129468, green: 0.9681989551, blue: 0.7294917703, alpha: 1), cellType: .single)
-    ]
+    private let activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.color = .darkGray
+        ai.hidesWhenStopped = true
+        ai.startAnimating()
+        return ai
+    }()
+    
+    var items: [TodayItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(activityIndicator)
+        activityIndicator.centerInSuperview(size: .init(width: 80.0, height: 80.0))
         setupCollectionView()
+        fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
+        tabBarController?.tabBar.superview?.setNeedsLayout()
+    }
+    
+    private func fetchData() {
+        
+        let dispatchGroup = DispatchGroup()
+        var topGrossing: AppGroup?
+        var games: AppGroup?
+        
+        dispatchGroup.enter()
+        AppsService.shared.fetchGames(with: AppsGroupRouter.games) { (response) in
+            switch response {
+            case .success(let results):
+               games = results
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        AppsService.shared.fetchTopGrossing(with: AppsGroupRouter.topGrossing) { (response) in
+            switch response {
+            case .success(let results):
+                topGrossing = results
+            case .error(let error):
+                print(error.localizedDescription)
+            }
+            dispatchGroup.leave()
+        }
+        
+        
+        dispatchGroup.notify(queue: .main) {
+            
+            self.items = [
+            .init(category: "LIFE HACK", title: "Utilizing your Time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single),
+            .init(category: "THE DAILY LIST", title: "Test-Drive these CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple(games?.feed.results ?? [])),
+            .init(category: "THE DAILY LIST", title: "Top Grossing iPhone Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple(topGrossing?.feed.results ?? [])),
+            .init(category: "HOLIDAYS", title: "Travel on Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9893129468, green: 0.9681989551, blue: 0.7294917703, alpha: 1), cellType: .single)
+            ]
+            
+            self.activityIndicator.stopAnimating()
+            self.collectionView.reloadData()
+        }
     }
     
     private func setupNavigationBar() {
@@ -39,8 +90,8 @@ class TodayController: UICollectionViewController {
     
     private func setupCollectionView() {
         collectionView.backgroundColor = #colorLiteral(red: 0.9531119466, green: 0.9487840533, blue: 0.9570327401, alpha: 1)
-        collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
-        collectionView.register(TodayMultipleAppsCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
+        collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayCell.key)//TodayItem.CellType.single.rawValue)
+        collectionView.register(TodayMultipleAppsCell.self, forCellWithReuseIdentifier: TodayMultipleAppsCell.key)//TodayItem.CellType.multiple.rawValue)
     }
     
     private func setupConstraints() {
@@ -100,12 +151,31 @@ class TodayController: UICollectionViewController {
 //        cell.todayItem = items[indexPath.item]
 //        return cell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: items[indexPath.item].cellType.rawValue, for: indexPath) as! TodayBaseCell
+        
+        
+        var id: String
+        switch items[indexPath.item].cellType {
+        case .single:
+            id = TodayCell.key
+        case .multiple:
+            id = TodayMultipleAppsCell.key
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as! TodayBaseCell
         cell.todayItem = items[indexPath.item]
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch items[indexPath.item].cellType {
+        case .multiple(let results):
+            let appsController = TodayMultipleAppsController(mode: .fullscreen)
+            appsController.results = results
+            present(BackEnabledNavigationController(rootViewController: appsController), animated: true, completion: nil)
+            return
+        default: break
+        }
+        
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         guard let startingFrame = cell.superview?.convert(cell.frame, to: self.view) else { return }
         

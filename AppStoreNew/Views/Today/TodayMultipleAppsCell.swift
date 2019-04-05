@@ -12,7 +12,7 @@ class TodayMultipleAppsCell: TodayBaseCell {
     
     static let key: String = String(describing: TodayMultipleAppsCell.self)
     
-    let multipleAppsController = UIViewController()
+    let multipleAppsController = TodayMultipleAppsController(mode: .compressed)
     
     private let categoryLabel: UILabel = {
         let label = UILabel()
@@ -32,6 +32,12 @@ class TodayMultipleAppsCell: TodayBaseCell {
             categoryLabel.text = todayItem?.category
             titleLabel.text = todayItem?.title
             backgroundColor = todayItem?.backgroundColor
+            
+            switch todayItem?.cellType {
+            case .multiple(let results)?:
+                multipleAppsController.results = results
+            default: break
+            }
         }
     }
     
@@ -47,6 +53,7 @@ class TodayMultipleAppsCell: TodayBaseCell {
     
     
     private func setupViews() {
+        layer.cornerRadius = 16.0
         backgroundColor = .white
         multipleAppsController.view.backgroundColor = .red
         let stackView = UIStackView(arrangedSubviews: [
