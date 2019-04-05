@@ -13,11 +13,42 @@ class TodayCell: UICollectionViewCell {
     static let key: String = String(describing: TodayCell.self)
     
     private let imageView: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "garden"))
+        let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
+    
+    private let categoryLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        return label
+    }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 26.0)
+        return label
+    }()
+    
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16.0)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    var topConstraint: NSLayoutConstraint?
+    
+    var todayItem: TodayItem? {
+        didSet {
+            imageView.image = todayItem?.image
+            categoryLabel.text = todayItem?.category
+            titleLabel.text = todayItem?.title
+            descriptionLabel.text = todayItem?.description
+            backgroundColor = todayItem?.backgroundColor
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,12 +66,21 @@ class TodayCell: UICollectionViewCell {
         layer.cornerRadius = 16.0
         clipsToBounds = true
         
-        addSubview(imageView)
-        NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 250.0),
-            imageView.widthAnchor.constraint(equalToConstant: 250.0),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        let imageContainer = UIView()
+        imageContainer.addSubview(imageView)
+        imageView.centerInSuperview(size: .init(width: 240.0, height: 240.0))
+        
+        let stackView = UIStackView(arrangedSubviews: [
+            categoryLabel,
+            titleLabel,
+            imageContainer,
+            descriptionLabel
             ])
+        stackView.spacing = 8
+        stackView.axis = .vertical
+        addSubview(stackView)
+        stackView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0.0, left: 24.0, bottom: 24.0, right: 24.0))
+        topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24.0)
+        topConstraint?.isActive = true
     }
 }
