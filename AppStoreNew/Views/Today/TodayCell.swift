@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayCell: UICollectionViewCell {
+class TodayCell: TodayBaseCell {
     
     static let key: String = String(describing: TodayCell.self)
     
@@ -40,7 +40,7 @@ class TodayCell: UICollectionViewCell {
     
     var topConstraint: NSLayoutConstraint?
     
-    var todayItem: TodayItem? {
+    override var todayItem: TodayItem? {
         didSet {
             imageView.image = todayItem?.image
             categoryLabel.text = todayItem?.category
