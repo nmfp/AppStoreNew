@@ -16,6 +16,7 @@ class TodayCell: TodayBaseCell {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -47,6 +48,7 @@ class TodayCell: TodayBaseCell {
             titleLabel.text = todayItem?.title
             descriptionLabel.text = todayItem?.description
             backgroundColor = todayItem?.backgroundColor
+            backgroundView?.backgroundColor = todayItem?.backgroundColor
         }
     }
     
@@ -64,7 +66,7 @@ class TodayCell: TodayBaseCell {
     private func setupViews() {
         backgroundColor = .white
         layer.cornerRadius = 16.0
-        clipsToBounds = true
+//        clipsToBounds = true
         
         let imageContainer = UIView()
         imageContainer.addSubview(imageView)

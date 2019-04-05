@@ -26,6 +26,7 @@
 		1F10C469225757AC001E5B74 /* TodayBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C468225757AC001E5B74 /* TodayBaseCell.swift */; };
 		1F10C46B225758BB001E5B74 /* TodayMultipleAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C46A225758BB001E5B74 /* TodayMultipleAppsController.swift */; };
 		1F10C46D225759A4001E5B74 /* MultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C46C225759A4001E5B74 /* MultipleAppCell.swift */; };
+		1F10C46F2257B162001E5B74 /* BackEnabledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C46E2257B162001E5B74 /* BackEnabledNavigationController.swift */; };
 		1F6D1EF92246D61800C7C508 /* CollectionSpinningLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */; };
 		1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C34223EA16400321FD2 /* AppDelegate.swift */; };
 		1FA51C37223EA16400321FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA51C36223EA16400321FD2 /* ViewController.swift */; };
@@ -75,6 +76,7 @@
 		1F10C468225757AC001E5B74 /* TodayBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBaseCell.swift; sourceTree = "<group>"; };
 		1F10C46A225758BB001E5B74 /* TodayMultipleAppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppsController.swift; sourceTree = "<group>"; };
 		1F10C46C225759A4001E5B74 /* MultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppCell.swift; sourceTree = "<group>"; };
+		1F10C46E2257B162001E5B74 /* BackEnabledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEnabledNavigationController.swift; sourceTree = "<group>"; };
 		1F6D1EF82246D61800C7C508 /* CollectionSpinningLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSpinningLayout.swift; sourceTree = "<group>"; };
 		1FA51C31223EA16400321FD2 /* AppStoreNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA51C34223EA16400321FD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				1FA51C5E223FCF0E00321FD2 /* Apps */,
 				1FA51C47223EA18E00321FD2 /* MainTabBarController.swift */,
 				1FA51C49223EA32E00321FD2 /* AppsSearchController.swift */,
+				1F10C46E2257B162001E5B74 /* BackEnabledNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				1FA51C35223EA16400321FD2 /* AppDelegate.swift in Sources */,
 				1FA51C50223EAC6400321FD2 /* Extensions+UIView.swift in Sources */,
 				1FA51C66224067AF00321FD2 /* AppRowCell.swift in Sources */,
+				1F10C46F2257B162001E5B74 /* BackEnabledNavigationController.swift in Sources */,
 				1F10C446224F8799001E5B74 /* AppDetailCell.swift in Sources */,
 				1F10C46B225758BB001E5B74 /* TodayMultipleAppsController.swift in Sources */,
 				1FA51C742240886700321FD2 /* SocialRouter.swift in Sources */,

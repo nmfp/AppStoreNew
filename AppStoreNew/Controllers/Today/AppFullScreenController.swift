@@ -37,6 +37,7 @@ extension AppFullScreenController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = AppFullScreenHeaderCell()
+            cell.clipsToBounds = true
             cell.todayCell.todayItem = todayItem
             cell.delegate = self
             return cell

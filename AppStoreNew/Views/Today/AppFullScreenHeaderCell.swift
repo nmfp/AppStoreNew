@@ -34,7 +34,7 @@ class AppFullScreenHeaderCell: UITableViewCell {
     
     private func setupViews() {
         backgroundColor = todayItem?.backgroundColor
-        todayCell = TodayCell()
+        todayCell = TodayCell(frame: .zero)
         todayCell.todayItem = todayItem
         todayCell.topConstraint?.constant = 48.0
         addSubview(todayCell)

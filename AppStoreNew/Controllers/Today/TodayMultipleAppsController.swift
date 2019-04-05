@@ -26,6 +26,8 @@ class TodayMultipleAppsController: UICollectionViewController {
         return button
     }()
     
+    override var prefersStatusBarHidden: Bool { return true }
+    
     init(mode: Mode) {
         self.mode = mode
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -96,18 +98,5 @@ extension TodayMultipleAppsController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minSpacing
-    }
-}
-
-
-
-class BackEnabledNavigationController: UINavigationController, UIGestureRecognizerDelegate {
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.interactivePopGestureRecognizer?.delegate = self
-    }
-    
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return self.viewControllers.count > 1
     }
 }
