@@ -27,6 +27,13 @@ class AppFullScreenController: UITableViewController {
         tableView.register(AppFullScreenHeaderCell.self, forCellReuseIdentifier: AppFullScreenHeaderCell.key)
         tableView.register(AppFullscreenDescriptionCell.self, forCellReuseIdentifier: AppFullscreenDescriptionCell.key)
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            scrollView.isScrollEnabled = false
+            scrollView.isScrollEnabled = true
+        }
+    }
 }
 
 extension AppFullScreenController {
