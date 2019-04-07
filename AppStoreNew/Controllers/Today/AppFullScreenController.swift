@@ -86,4 +86,3 @@ extension AppFullScreenController: UITableViewDelegate, UITableViewDataSource {
         return 500.0//UITableView.automaticDimension
     }
 }
-UICollectionViewController
